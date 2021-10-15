@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Spike.CancellationTokenExample.ViewModels.HomeViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Spike - CancellationToken Example</h1>
+</div>
+
+<div>
+    This button will start a workload that will self cancel after 2 seconds.
+    <form>
+        <button type="submit" asp-controller="work" asp-action="work2secs">Work 2 Secs</button>
+    </form>
+</div>
+
+<div>
+    This button will work until the cancel button is hit
+    <form>
+        <button type="submit" asp-controller="work" asp-action="nonstop">Non-Stop</button>
+    </form>
+</div>
+
+<label>Message:</label>  @Model?.Message
